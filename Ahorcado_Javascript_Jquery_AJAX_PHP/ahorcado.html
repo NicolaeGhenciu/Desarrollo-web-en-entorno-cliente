@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahorcado</title>
+    <!-- CSS only -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script type="text/javascript" src="cosas.js"></script>
+
+
+    <link rel="stylesheet" href="cosas.css">
+</head>
+
+<header>
+    <h1 id="titulo">EL JUEGO DE HANGIN</h1>
+</header>
+
+<nav id="barranavegacion" hidden>
+    <a id="botonBlanco" onclick="miCuenta()">Mi cuenta</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <a id="botonBlanco" class="modoAdmin" hidden onclick="listaPlabras()">Lista de Palabras</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <a id="botonBlanco" class="modoAdmin" hidden onclick="listaJugadores()">Lista de Jugadores</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <a id="botonBlanco" class="resolver" onclick="resolver()">Resolver</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" class="palabraResolver" hidden>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <a id="botonVerde" class="botonEnviar" onclick="enviar()" hidden>Enviar</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <a id="botonBlanco" class="cerrarSesion" href="index.html" hidden>CERRAR SESIÓN</a>
+</nav>
+
+<main id="elmain">
+
+    <h3 id="categorias"> Elige una categoría: </h3>
+
+    <div id="inicio">
+        <div id="caja2"></div>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="button" id="botonjugar" class="botonjugar" value="Jugar" onclick="jugar(true)">
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="button" value="Volver a jugar" id="restart" onclick="jugar(false)" hidden>
+    </div>
+
+</main>
+
+<div id="cajaspan"><span id="palabraOculta"></span></div>
+
+<div id="caja1" hidden>
+    <ul>
+        <li><span id="selectCateg"><b>Categorias: </b></span></li>
+        <li><span id="vidas"><b>Vidas : 7</b></span></li>
+        <li><span id="puntuacion"><b>Puntuacion: 0</b></span></li>
+    </ul>
+</div>
+
+<div id="asideI" hidden>
+    <img id="imagenAhorcado" src="img/con7vidas.png" height="250px" width="250px">
+</div>
+
+<body id="cuerpo">
+
+    <div id="datosUsuario" hidden>
+        <span>Contraseña Actual: </span> <span id="contraseniaActual"></span> <br> <br>
+        <input type="text" id="inputContrasenia"> <a id="botonVerde" class="botonEnviarPass" onclick="cambiarPass()">Cambiar
+            Contraseña</a> <br> <br> <br>
+        <a id="botonNegro" onclick="volverAlaPartida()">Volver a la Partida</a>
+    </div>
+
+    <div id="partidasJugadas" hidden></div>
+
+    <div id="modificarDiv" hidden>
+        <a id="botonVerde" onclick="botonInsertar()">Insertar nueva palabra</a> <br> <br>
+        <input type="text" class="input" id="nuevapalabra" placeholder="Introduce una palabra" hidden>&nbsp;&nbsp;&nbsp;
+        <input type="text" class="input" id="nuevacategoria" placeholder="Introduce una categoria" hidden>
+        <a id="botonVerde" onclick="insertarPalabra()" class="botonInsertarPalabra" hidden>Insertar</a>
+        <br> <br>
+        <div id="datosPalabra" hidden>
+            <span>Modificar Palabra: </span> <br> <br>
+            Palabra :<input type="text" id="inputMODpalabra" class="input"> Categoria: <input type="text"
+                id="inputMODcategoria" class="input">
+            <a id="botonVerde" class="botonMod" onclick="ajaxModificarPalabra()">Modificar</a> <br> <br>
+        </div>
+        <a id="botonNegro" onclick="volverAlaPartida()">Volver a la Partida</a>
+    </div>
+
+    <div id="listaPalabras" hidden></div>
+
+    <div id="usuariosDiv" hidden>
+        <a id="botonVerde" onclick="botonInsertarUsuario()">Insertar nuevo usuario</a> <br> <br>
+        <input type="text" class="input" id="newemail" placeholder="Email" hidden>&nbsp;&nbsp;&nbsp;
+        <input type="text" class="input" id="newpass" placeholder="Contraseña" hidden>&nbsp;&nbsp;&nbsp;
+        <input type="text" class="input" id="newadmin" placeholder="¿Es Admin? 1=si , 0=no" hidden>
+        <a id="botonVerde" onclick="insertarUsuario()" class="botonInsertarUsuario" hidden>Insertar</a>
+        <br> <br>
+        <a id="botonNegro" onclick="buscarUsuario()">Buscar usuario</a> <br> <br>
+        <input type="text" class="input" id="emailBuscar" placeholder="Email a buscar" hidden>&nbsp;&nbsp;&nbsp;
+        <a id="botonVerde" onclick="creaTablaUsuariosBuscar()" class="botonBuscarUsuario" hidden>Buscar</a>
+        <br> <br>
+        <div id="datosUsuarioMOD" hidden>
+            <span>Modificar Usuario: </span> <br> <br>
+            Email :<input type="text" id="inputMODemail" class="input"> Contraseña: <input type="text" id="inputMODpass"
+                class="input">
+            <a id="botonVerde" class="botonMod" onclick="ajaxModificarUsuario()">Modificar</a> <br> <br>
+        </div> <br>
+        <a id="botonNegro" onclick="volverAlaPartida()">Volver a la Partida</a>
+    </div>
+
+    <div id="listaUsuarios" hidden></div>
+
+    <div id="zonateclado"></div>
+
+</body>
+
+<footer class="text-center text-lg-start">
+
+    <div class="text-center p-3">
+        © 2023 Copyright:
+        <a class="text-dark" href="https://github.com/NicolaeGhenciu">Ghenciu Nicolae Adrian</a>
+    </div>
+</footer>
+
+</html>
