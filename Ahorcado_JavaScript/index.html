@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahorcado</title>
+    <script type="text/javascript" src="cosas.js"></script>
+    <link rel="stylesheet" href="cosas.css">
+</head>
+
+<body id="cuerpo">
+    <div>
+
+        <h1 id="titulo">EL JUEGO DE HANGIN</h1>
+
+        <div id="caja1">
+            <select id="diccionario">
+                <option value="1">Animales</option>
+                <option value="2">Futbol</option>
+                <option value="3">Paises</option>
+            </select>
+            <span id="victory" hidden><b>Victorias: 0</b></span>
+            <span id="vidas" hidden><b>Vidas : 7</b></span>
+            <span id="lose" hidden><b>Derrotas: 0</b></span>
+            <input type="button" value="Volver a jugar" id="restart" onclick="jugar(false)" hidden>
+        </div>
+
+        <input type="button" id="botonjugar" value="Jugar" onclick="jugar(true)">
+
+        <span id="palabraOculta"></span>
+
+        <img id="imagenAhorcado" src="img/con7vidas.png" height="300px" width="300px" hidden>
+
+        <div id="zonateclado"></div>
+</body>
+
+</html>

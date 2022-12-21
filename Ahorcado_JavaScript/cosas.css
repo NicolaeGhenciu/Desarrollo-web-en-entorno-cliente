@@ -1,0 +1,155 @@
+body {
+    background-image: url("img/background2.jpg");
+    background-size: cover;
+}
+
+#titulo {
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bold;
+    font-size: 35px;
+    color: #EBD758;
+    text-shadow: -1px 0 #414D68, 0 1px #414D68, 1px 0 #414D68, 0 -1px #414D68, -2px 2px 0 #414D68, 2px 2px 0 #414D68, 1px 1px #414D68, 2px 2px #414D68, 3px 3px #414D68, 4px 4px #414D68, 5px 5px #414D68;
+}
+
+#vidas {
+    color: rgb(0, 255, 26);
+    font-size: 23px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 14px;
+    font-family: Comic Sans MS;
+    text-shadow: -1px 0 #414D68, 0 1px #414D68, 1px 0 #414D68, 0 -1px #414D68, -2px 2px 0 #414D68, 2px 2px 0 #414D68, 1px 1px #414D68, 2px 2px #414D68, 3px 3px #414D68, 4px 4px #414D68, 5px 5px #414D68;
+}
+
+#victory {
+    color: rgba(0, 255, 26, 0.678);
+    font-size: 23px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 14px;
+    font-family: Comic Sans MS;
+    text-shadow: -1px 0 #414D68, 0 1px #414D68, 1px 0 #414D68, 0 -1px #414D68, -2px 2px 0 #414D68, 2px 2px 0 #414D68, 1px 1px #414D68, 2px 2px #414D68, 3px 3px #414D68, 4px 4px #414D68, 5px 5px #414D68;
+}
+
+#lose {
+    color: #ff0000b3;
+    font-size: 23px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 14px;
+    font-family: Comic Sans MS;
+    text-shadow: -1px 0 #414D68, 0 1px #414D68, 1px 0 #414D68, 0 -1px #414D68, -2px 2px 0 #414D68, 2px 2px 0 #414D68, 1px 1px #414D68, 2px 2px #414D68, 3px 3px #414D68, 4px 4px #414D68, 5px 5px #414D68;
+}
+
+#caja1 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+#restart {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #4CAF50;
+    border: dashed;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    width: 180px;
+    height: 40px;
+}
+
+#restart:hover {
+    opacity: 85%;
+}
+
+#diccionario {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px;
+    line-height: 150%;
+    padding: 4px;
+    padding-left: 8px;
+    position: static;
+    width: 169px;
+    height: 38px;
+    background: #9a41de;
+    border: none;
+    border-radius: 16px;
+    color: #ffffff;
+
+}
+
+#diccionario:hover {
+    opacity: 85%;
+}
+
+#botonjugar {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    margin-top: 100px;
+    border: dashed;
+}
+
+#botonjugar:hover {
+    opacity: 85%;
+}
+
+#palabraOculta {
+    display: flex;
+    justify-content: center;
+    color: #ad77d6;
+    font-family: Comic Sans MS;
+    font-weight: bold;
+    font-size: 30px;
+    text-shadow: -1px 0 #414D68, 0 1px #414D68, 1px 0 #414D68, 0 -1px #414D68, -2px 2px 0 #414D68, 2px 2px 0 #414D68, 1px 1px #414D68, 2px 2px #414D68, 3px 3px #414D68, 4px 4px #414D68, 5px 5px #414D68;
+}
+
+#imagenAhorcado {
+    margin: auto;
+    padding: 50px;
+    /*border: solid black 10px;*/
+}
+
+
+.tecla {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 25px;
+    width: 35px;
+    height: 35px;
+    margin: 5px;
+    border: none;
+    color: #ffffff;
+    border: double;
+    background-color: #56412a;
+    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.tecla:hover {
+    opacity: 0.7;
+    box-shadow: inset 0 0 20px rgba(49, 138, 172, 0.5), 0 0 20px rgba(49, 138, 172, 0.4);
+    outline-color: rgba(49, 138, 172, 0);
+    outline-offset: 80px;
+    text-shadow: 1px 1px 6px #fff;
+}
+
+#zonateclado {
+    display: flex;
+    justify-content: center;
+}
